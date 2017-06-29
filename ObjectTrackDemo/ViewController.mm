@@ -142,49 +142,49 @@ typedef NS_ENUM(uint8_t, MOVRotateDirection)
 }
 
 // 使用pixelBuffer进行文字检测
-- (void)detectTextWithPixelBuffer:(CVPixelBufferRef)pixelBuffer
-{
-    void (^ VNRequestCompletionHandler)(VNRequest *request, NSError * _Nullable error) = ^(VNRequest *request, NSError * _Nullable error)
-    {
-        if (nil == error) {
-            
-            size_t width = CVPixelBufferGetWidth(pixelBuffer);
-            size_t height = CVPixelBufferGetHeight(pixelBuffer);
-            CGSize size = CGSizeMake(width, height);
-            void (^UIGraphicsImageDrawingActions)(UIGraphicsImageRendererContext *rendererContext) = ^(UIGraphicsImageRendererContext *rendererContext)
-            {
-                //vision框架使用的坐标是为 0 -》 1， 原点为屏幕的左下角（跟UIKit不同），向右向上增加，妈蛋其实就是Opengl的纹理坐标系。
-                CGAffineTransform  transform= CGAffineTransformIdentity;
-                transform = CGAffineTransformScale(transform, size.width, -size.height);
-                transform = CGAffineTransformTranslate(transform, 0, -1);
-                
-                for (VNTextObservation *textObservation in request.results)
-                {
-                    [[UIColor redColor] setStroke];
-                    [[UIBezierPath bezierPathWithRect:CGRectApplyAffineTransform(textObservation.boundingBox, transform)] stroke];
-                    for (VNRectangleObservation *rectangleObservation in textObservation.characterBoxes)
-                    {
-                        [[UIColor blueColor] setStroke];
-                        [[UIBezierPath bezierPathWithRect:CGRectApplyAffineTransform(rectangleObservation.boundingBox, transform)] stroke];
-                    }
-                }
-            };
-            
-            UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:size];
-            UIImage *overlayImage = [renderer imageWithActions:UIGraphicsImageDrawingActions];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.highlightView.image = overlayImage;
-            });
-        }
-    };
-    
-    VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCVPixelBuffer:pixelBuffer options:@{}];
-    VNDetectTextRectanglesRequest *request = [[VNDetectTextRectanglesRequest alloc] initWithCompletionHandler:VNRequestCompletionHandler];
-    
-    request.reportCharacterBoxes = YES;
-    [handler performRequests:@[request] error:nil];
-}
+//- (void)detectTextWithPixelBuffer:(CVPixelBufferRef)pixelBuffer
+//{
+//    void (^ VNRequestCompletionHandler)(VNRequest *request, NSError * _Nullable error) = ^(VNRequest *request, NSError * _Nullable error)
+//    {
+//        if (nil == error) {
+//
+//            size_t width = CVPixelBufferGetWidth(pixelBuffer);
+//            size_t height = CVPixelBufferGetHeight(pixelBuffer);
+//            CGSize size = CGSizeMake(width, height);
+//            void (^UIGraphicsImageDrawingActions)(UIGraphicsImageRendererContext *rendererContext) = ^(UIGraphicsImageRendererContext *rendererContext)
+//            {
+//                //vision框架使用的坐标是为 0 -》 1， 原点为屏幕的左下角（跟UIKit不同），向右向上增加，妈蛋其实就是Opengl的纹理坐标系。
+//                CGAffineTransform  transform= CGAffineTransformIdentity;
+//                transform = CGAffineTransformScale(transform, size.width, -size.height);
+//                transform = CGAffineTransformTranslate(transform, 0, -1);
+//
+//                for (VNTextObservation *textObservation in request.results)
+//                {
+//                    [[UIColor redColor] setStroke];
+//                    [[UIBezierPath bezierPathWithRect:CGRectApplyAffineTransform(textObservation.boundingBox, transform)] stroke];
+//                    for (VNRectangleObservation *rectangleObservation in textObservation.characterBoxes)
+//                    {
+//                        [[UIColor blueColor] setStroke];
+//                        [[UIBezierPath bezierPathWithRect:CGRectApplyAffineTransform(rectangleObservation.boundingBox, transform)] stroke];
+//                    }
+//                }
+//            };
+//
+//            UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:size];
+//            UIImage *overlayImage = [renderer imageWithActions:UIGraphicsImageDrawingActions];
+//
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.highlightView.image = overlayImage;
+//            });
+//        }
+//    };
+//
+//    VNImageRequestHandler *handler = [[VNImageRequestHandler alloc] initWithCVPixelBuffer:pixelBuffer options:@{}];
+//    VNDetectTextRectanglesRequest *request = [[VNDetectTextRectanglesRequest alloc] initWithCompletionHandler:VNRequestCompletionHandler];
+//
+//    request.reportCharacterBoxes = YES;
+//    [handler performRequests:@[request] error:nil];
+//}
 
 
 
