@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  TextAndHorizonDetectionDemo
+//  ObjectTrackDemo
 //
-//  Created by maxcwfeng on 2017/6/8.
+//  Created by baiya on 2017/6/8.
 //  Copyright © 2017年 Maxcw. All rights reserved.
 //
 

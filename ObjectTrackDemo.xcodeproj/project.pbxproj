@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D89B25F1F04F9F100E71E29 /* CVPixelBufferUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D89B25E1F04F9F100E71E29 /* CVPixelBufferUtils.m */; };
 		2DF10B901F01FBD1003A9756 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF10B8F1F01FBC9003A9756 /* Accelerate.framework */; };
 		551895731EE97D9000556788 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551895721EE97D8900556788 /* AVFoundation.framework */; };
 		55B831761EE8EFE800A35064 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B831751EE8EFDB00A35064 /* Vision.framework */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D89B25D1F04F9F100E71E29 /* CVPixelBufferUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVPixelBufferUtils.h; sourceTree = "<group>"; };
+		2D89B25E1F04F9F100E71E29 /* CVPixelBufferUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CVPixelBufferUtils.m; sourceTree = "<group>"; };
 		2DDFE5301F00F6E10095DFBC /* frameworks */ = {isa = PBXFileReference; lastKnownFileType = text; name = frameworks; path = TextAndHorizonDetectionDemo/frameworks; sourceTree = "<group>"; };
 		2DDFE5311F00F7010095DFBC /* NextCV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NextCV.framework; path = frameworks/NextCV.framework; sourceTree = "<group>"; };
 		2DDFE5321F00F7010095DFBC /* YTHumanDetection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YTHumanDetection.framework; path = frameworks/YTHumanDetection.framework; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				CC98BBA41EFBAF4800A7D8BA /* UIImage+Detect.m */,
 				CC98BBA61EFBB1E800A7D8BA /* UIImage+Convert.h */,
 				CC98BBA71EFBB1E800A7D8BA /* UIImage+Convert.mm */,
+				2D89B25D1F04F9F100E71E29 /* CVPixelBufferUtils.h */,
+				2D89B25E1F04F9F100E71E29 /* CVPixelBufferUtils.m */,
 			);
 			path = ObjectTrackDemo;
 			sourceTree = "<group>";
@@ -171,7 +176,7 @@
 				TargetAttributes = {
 					55B908621EE8E99C0085647F = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -215,6 +220,7 @@
 				55B9086B1EE8E99C0085647F /* ViewController.mm in Sources */,
 				55B908761EE8E99C0085647F /* main.m in Sources */,
 				CCFED2891EFA53B7006A747D /* AVCamPreviewView.m in Sources */,
+				2D89B25F1F04F9F100E71E29 /* CVPixelBufferUtils.m in Sources */,
 				CC98BBA81EFBB1E800A7D8BA /* UIImage+Convert.mm in Sources */,
 				55B908681EE8E99C0085647F /* AppDelegate.m in Sources */,
 			);
@@ -344,8 +350,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JS6V648H48;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -367,8 +373,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JS6V648H48;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

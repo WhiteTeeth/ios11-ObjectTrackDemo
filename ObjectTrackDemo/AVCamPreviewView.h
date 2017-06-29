@@ -1,8 +1,8 @@
 //
 //  AVCamPreviewView.h
-//  TextAndHorizonDetectionDemo
+//  ObjectTrackDemo
 //
-//  Created by engleliu on 2017/6/21.
+//  Created by baiya on 2017/6/21.
 //  Copyright © 2017年 Maxcw. All rights reserved.
 //
 

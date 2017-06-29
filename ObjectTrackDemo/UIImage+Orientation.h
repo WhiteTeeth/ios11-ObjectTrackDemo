@@ -1,8 +1,8 @@
 //
 //  UIImage+Orientation.h
-//  TextAndHorizonDetectionDemo
+//  ObjectTrackDemo
 //
-//  Created by engleliu on 2017/6/22.
+//  Created by baiya on 2017/6/22.
 //  Copyright © 2017年 Maxcw. All rights reserved.
 //
 
